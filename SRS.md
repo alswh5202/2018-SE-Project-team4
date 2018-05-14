@@ -94,9 +94,11 @@ l  XML과 같은 표준 데이터 교환 형식
 
 ### 3      유스케이스(Usecase)
 
+
 ##### 3.1     Usecase 이름
 
-가       요약시나리오
+가      ![default](https://user-images.githubusercontent.com/33536706/39981770-f10963f6-578c-11e8-83a1-661597217129.jpg)
+
 
 나       이벤트 흐름
 
