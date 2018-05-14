@@ -1,3 +1,10 @@
+#해야 할 것 5.14
+SRS.md 4번 항목 이후로 수정
+3번 유스케이스 설명 작성하기
+
+
+
+
 # 2018-SE-Project-team4
 cau 2018-SE-Project-team4
 
