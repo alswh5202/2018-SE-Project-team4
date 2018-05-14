@@ -1,6 +1,6 @@
 # SoftwareRequirements Specification
-
-### 1      소개(Introduction)
+==수정시작==
+### 1      소개(Introduction)
 
 ##### 1.1     목적(Purpose)
 
