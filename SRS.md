@@ -1,10 +1,10 @@
 # SoftwareRequirements Specification
-
-### 1      소개(Introduction)
+==수정시작==
+### 1      소개(Introduction)
 
 ##### 1.1     목적(Purpose)
 
-이 문서에요구사항이 명시되어있는 제품또는 애플리케이션을설명한다. 이 SRS가전체 시스템중 일부에만관련된것이라면그 부분또는 하위시스템을 설명한다.
+파일을 비교하고 병합하는 것이 주요 기능인 SimpleMerge를 만드는 것 이 SRS가전체 시스템중 일부에만관련된것이라면그 부분또는 하위시스템을 설명한다.
 
 ##### 1.2     프로젝트 범위(Project Scope)
 
