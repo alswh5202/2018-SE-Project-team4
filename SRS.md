@@ -1,21 +1,30 @@
 # SoftwareRequirements Specification
 ==수정시작==
 
-##### Version 1.0
+#### Version 1.0
 
-##### May 14, 2018
+#### May 14, 2018
 
-##### Project Team:
+#### Project Team:
+  
   <4조>
+  
   20131961 김민조
+  
   20132569 조성주
+  
   20132862 김현빈
+  
   20134220 우정현
+  
   20134695 김명규
+  
   20162379 김성연
   
-##### Document Author(s):
-  김현빈
+#### Document Author(s):
+  
+  김현빈
+  
   조성주
 
 ### 1      소개(Introduction)
