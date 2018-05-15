@@ -82,12 +82,44 @@ UC5 Diff
 UC6 CopytoRight
 UC7 CopytoLeft
 
+UC1 Flow of Events for the Load Use Case
+
+1.1 Preconditions:
+텍스트 파일이어야 한다.
+1.2 Main Flow:
+로드 버튼을 클릭시 파일 선택창이 나타나 유저가 파일[E1]을 선택해 온다.
+1.3 Subflows:
+None
+1.4 Alternative Flows:
+[E1] 파일은 텍스트 파일이어야 한다. 만약 텍스트 파일이 아닌 경우, 경고창을 띄운 후 파일을 다시 선택하게 한다.
+
+UC2 Flow of Events for the Edit Use Case
+
+2.1 Preconditions:
+파일이 로드 된 상태여야 한다.
+2.2 Main Flow:
+편집 버튼을 누르면 파일의 내용을 편집한다.
+2.3 Subflows:
+[S1] 편집 사항이 발생할 경우 저장 버튼이 활성화된다.
+2.4 Alternative Flows:
+None
+
+UC3 Flow of Events for the Save Use Case
+
+3.1 Preconditions:
+파일이 로드 되어 있어야하고, 편집 사항이 있어서 저장버튼이 활성화 되어있어야한다.
+3.2 Main Flow:
+저장 버튼을 누르면 편집된 내용이 저장된다.
+3.3 Subflows:
+None
+3.4 Alternative Flows:
+None
 
 나       이벤트 흐름
 
-​	①      기본 흐름
+①      기본 흐름
 
-​	②      예외흐름
+②      예외흐름
 
 다       사전조건
 
