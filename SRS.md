@@ -132,6 +132,64 @@ None
 3.4 Alternative Flows:
 None
 
+UC4 Flow of Events for the Diff Use Case
+
+4.1 Preconditions: 
+두 개의 파일이 로드된 상태여야 한다.
+
+4.2 Main Flow: 
+비교 버튼을 클릭시 두 LCS(Longest Common Subsequence) 알고리즘을 사용하여 두 파일을 비교한다.
+
+4.3 Subflows: 
+비교 버튼을 누르면 프로그램이 색상이 지정된 글꼴과 배경을 표시한다.
+
+4.4 Alternative Flows: 
+None
+
+UC5 Flow of Events for the Merge Use Case
+
+5.1 Preconditions:
+두개의 파일이 비교된 상태여야 한다.
+
+5.2 Main Flow:
+병합 버튼은 2가지가 있으며, CopytoRight 버튼과 CopytoLeft 버튼으로 나뉜다.
+
+차이를 나타내는 블록을 통과하고 그 차이를 병합한다.
+
+5.3 Subflows:
+None
+
+5.4 Alternative Flows:
+None
+
+UC6 Flow of Events for the CopytoRight Use Case
+
+6.1 Preconditions:
+왼쪽 파일이 로드된후, 비교된 상태가 되어야 한다.
+
+6.2 Main Flow:
+CopytoRight 버튼을 누르면 왼쪽 패널에서 선택한 블록을 오른쪽 패널에 표시된 파일로 복사한다.
+
+6.3 Subflows:
+None
+
+6.4 Alternative Flows:
+None
+
+UC7 Flow of Events for the CopytoLeft Use Case
+
+7.1 Preconditions:
+오른쪽 파일이 로드된후, 비교된 상태가 되어야 한다.
+
+7.2 Main Flow:
+CopytoLeft 버튼을 누르면 오른쪽 패널에서 선택한 블록을 왼쪽 패널에 표시된 파일로 복사한다.
+
+7.3 Subflows:
+None
+
+7.4 Alternative Flows:
+None
+
 
 나       이벤트 흐름
 
