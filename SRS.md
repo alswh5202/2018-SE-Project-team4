@@ -23,6 +23,7 @@
   
 #### Document Author(s):
   
+  
   김현빈
   
   
@@ -76,20 +77,17 @@ Java Window form을 이용한 개발
 
 ### 3      유스케이스(Usecase)
 
-
-##### 3.1     Usecase 이름
-
 ![default](https://user-images.githubusercontent.com/33536706/39981770-f10963f6-578c-11e8-83a1-661597217129.jpg)
 
-UC1 Load
-UC2 Edit
-UC3 Save
-UC4 Merge
-UC5 Diff
-UC6 CopytoRight
-UC7 CopytoLeft
+#####UC1 Load
+#####UC2 Edit
+#####UC3 Save
+#####UC4 Merge
+#####UC5 Diff
+#####UC6 CopytoRight
+#####UC7 CopytoLeft
 
-UC1 Flow of Events for the Load Use Case
+####UC1 Flow of Events for the Load Use Case
 
 1.1 Preconditions:
 텍스트 파일이어야 한다.
@@ -97,14 +95,11 @@ UC1 Flow of Events for the Load Use Case
 1.2 Main Flow:
 로드 버튼을 클릭시 파일 선택창이 나타나 유저가 파일[E1]을 선택해 온다.
 
-1.3 Subflows:
-None
-
-1.4 Alternative Flows:
+1.3 Alternative Flows:
 [E1] 파일은 텍스트 파일이어야 한다. 만약 텍스트 파일이 아닌 경우, 경고창을 띄운 후 파일을 다시 선택하게 한다.
 
 
-UC2 Flow of Events for the Edit Use Case
+####UC2 Flow of Events for the Edit Use Case
 
 2.1 Preconditions:
 파일이 로드 된 상태여야 한다.
@@ -115,10 +110,7 @@ UC2 Flow of Events for the Edit Use Case
 2.3 Subflows:
 [S1] 편집 사항이 발생할 경우 저장 버튼이 활성화된다.
 
-2.4 Alternative Flows:
-None
-
-UC3 Flow of Events for the Save Use Case
+####UC3 Flow of Events for the Save Use Case
 
 3.1 Preconditions:
 파일이 로드 되어 있어야하고, 편집 사항이 있어서 저장버튼이 활성화 되어있어야한다.
@@ -126,13 +118,7 @@ UC3 Flow of Events for the Save Use Case
 3.2 Main Flow:
 저장 버튼을 누르면 편집된 내용이 저장된다.
 
-3.3 Subflows:
-None
-
-3.4 Alternative Flows:
-None
-
-UC4 Flow of Events for the Diff Use Case
+####UC4 Flow of Events for the Diff Use Case
 
 4.1 Preconditions: 
 두 개의 파일이 로드된 상태여야 한다.
@@ -143,26 +129,16 @@ UC4 Flow of Events for the Diff Use Case
 4.3 Subflows: 
 비교 버튼을 누르면 프로그램이 색상이 지정된 글꼴과 배경을 표시한다.
 
-4.4 Alternative Flows: 
-None
-
-UC5 Flow of Events for the Merge Use Case
+####UC5 Flow of Events for the Merge Use Case
 
 5.1 Preconditions:
 두개의 파일이 비교된 상태여야 한다.
 
 5.2 Main Flow:
 병합 버튼은 2가지가 있으며, CopytoRight 버튼과 CopytoLeft 버튼으로 나뉜다.
-
 차이를 나타내는 블록을 통과하고 그 차이를 병합한다.
 
-5.3 Subflows:
-None
-
-5.4 Alternative Flows:
-None
-
-UC6 Flow of Events for the CopytoRight Use Case
+####UC6 Flow of Events for the CopytoRight Use Case
 
 6.1 Preconditions:
 왼쪽 파일이 로드된후, 비교된 상태가 되어야 한다.
@@ -170,25 +146,13 @@ UC6 Flow of Events for the CopytoRight Use Case
 6.2 Main Flow:
 CopytoRight 버튼을 누르면 왼쪽 패널에서 선택한 블록을 오른쪽 패널에 표시된 파일로 복사한다.
 
-6.3 Subflows:
-None
-
-6.4 Alternative Flows:
-None
-
-UC7 Flow of Events for the CopytoLeft Use Case
+####UC7 Flow of Events for the CopytoLeft Use Case
 
 7.1 Preconditions:
 오른쪽 파일이 로드된후, 비교된 상태가 되어야 한다.
 
 7.2 Main Flow:
 CopytoLeft 버튼을 누르면 오른쪽 패널에서 선택한 블록을 왼쪽 패널에 표시된 파일로 복사한다.
-
-7.3 Subflows:
-None
-
-7.4 Alternative Flows:
-None
 
 
 ### 4      시스템 특징(System Feature)
