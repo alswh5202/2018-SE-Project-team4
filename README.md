@@ -1,4 +1,9 @@
 # 해야 할 것 : 컴파일러 과제끝날때까지 쉬기
+## 그래도 하고싶으면
+### 1) mvc 만들기 -> (김성연)
+### 2) diff 알고리즘 / 소스코드 구해오기
+### 3) SRS 수정하기
+SRS 수정은 사소한거라도 ex)문법 맞추기 라도 해서 커밋횟수를 늘리도록하자
 
 # 이클립스에서 프로젝트 가져오는 방법
 ## 1. File -> Import -> General)Projects from Flolder -> Directory) (clone 한 폴더에서 2018-SE-Project-team4 선택
