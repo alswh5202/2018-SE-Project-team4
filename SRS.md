@@ -107,10 +107,10 @@ Java Window form을 이용한 개발
 파일이 로드 된 상태여야 한다.
 
 2.2 Main Flow:
-편집 버튼을 누르면 파일의 내용을 편집한다.
+편집 버튼을 누르면 파일의 내용을 편집한다. 
 
 2.3 Subflows:
-[S1] 편집 사항이 발생할 경우 저장 버튼이 활성화된다.
+[S1] 저장버튼이 활성화 된다. 저장버튼을 제외한 모든 버튼은 비활성화 된다.
 
 #### UC3 Flow of Events for the Save Use Case
 
@@ -126,10 +126,10 @@ Java Window form을 이용한 개발
 두 개의 파일이 로드된 상태여야 한다.
 
 4.2 Main Flow: 
-비교 버튼을 클릭시 두 LCS(Longest Common Subsequence) 알고리즘을 사용하여 두 파일을 비교한다.
+비교 버튼을 클릭시 LCS(Longest Common Subsequence) 알고리즘을 사용하여 두 파일을 비교한다.
 
 4.3 Subflows: 
-비교 버튼을 누르면 프로그램이 색상이 지정된 글꼴과 배경을 표시한다.
+비교 버튼을 누르면 비교된 내역이 지정된 글꼴과 배경으로 파일 내용창에 표시된다.
 
 #### UC5 Flow of Events for the Merge Use Case
 
