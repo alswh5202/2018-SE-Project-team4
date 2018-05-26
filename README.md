@@ -5,6 +5,10 @@
 ### 3) SRS 수정하기
 SRS 수정은 사소한거라도 ex)문법 맞추기 라도 해서 커밋횟수를 늘리도록하자
 
+# 보고서 작성에 넣을 내용들 정하기
+## 도메인 모델, 클래스 다이어그램, 유스케이스, FURPS+(SRS) 제대로 정리 (필수)
+## +스테이트, 시퀀스, 액티비티 다이어그램 등등?
+
 # 이클립스에서 프로젝트 가져오는 방법
 ## 1. File -> Import -> General)Projects from Flolder -> Directory) (clone 한 폴더에서 2018-SE-Project-team4 선택
 ## 2. Profit!
