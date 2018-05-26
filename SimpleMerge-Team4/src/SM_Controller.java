@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 public class SM_Controller implements ActionListener {
 	private SM_Model model;
 	private SM_View view;
+	private boolean isEdit;
 	
 	public SM_Controller(SM_Model _model,SM_View _view){
 		model = _model;
@@ -23,6 +24,10 @@ public class SM_Controller implements ActionListener {
 	}
 	
 	private void load(String path, boolean isTwo){
+		
+	}
+	
+	private void edit(){
 		
 	}
 	
