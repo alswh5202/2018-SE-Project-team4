@@ -9,6 +9,7 @@ public class SM_Controller implements ActionListener {
 	public SM_Controller(SM_Model _model,SM_View _view){
 		model = _model;
 		view = _view;
+		_view.addListnerController(this);
 	}
 	
 	private void diff(){
@@ -34,7 +35,7 @@ public class SM_Controller implements ActionListener {
 	
 	
 	public void actionPerformed(ActionEvent e){
-
+		System.out.println(e.getActionCommand());
 	}
 
 }

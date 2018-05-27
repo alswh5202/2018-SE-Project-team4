@@ -1,18 +1,20 @@
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class SM_View extends JFrame {
 	// UI 정의
+	View_mainFrame vmf = new View_mainFrame();
 	
 	public SM_View (){
 		//UI set
 	}
 	
 	public void setUIText(String text, boolean isTwo) {
-		//UI 상의 텍스트를 업데이트함
+		vmf.setUIText(text, isTwo);
 	}
 	
-	public String getUIText(String text, boolean isTwo) {
-		return text;
+	public String getUIText(boolean isTwo) {
+		return vmf.getUIText(isTwo);
 		//UI 상의 텍스트를 가져옴
 	}
 	
@@ -21,6 +23,6 @@ public class SM_View extends JFrame {
 	}
 	
 	public void addListnerController(SM_Controller ctrl) {
-		//버튼들의 액션리스너를 ctrl로 등록시킴
+		vmf.addListnerController(ctrl);
 	}
 }
