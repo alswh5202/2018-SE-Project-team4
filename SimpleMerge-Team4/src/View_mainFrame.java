@@ -1,8 +1,10 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class View_mainFrame extends JFrame{
 	
@@ -15,6 +17,8 @@ public class View_mainFrame extends JFrame{
 	JPanel panel_btn;
 	JButton btn_merge;
 	JButton btn_diff;
+	
+	JFileChooser jfc;
 	
 	public View_mainFrame() {
 		init();
@@ -36,6 +40,10 @@ public class View_mainFrame extends JFrame{
 		this.add(panel_btn, "North");
 		this.add(panel_ta, "Center");
 		// Frame Layout Controll
+		
+		jfc = new JFileChooser();
+        jfc.setFileFilter(new FileNameExtensionFilter("txt", "txt"));
+        jfc.setMultiSelectionEnabled(false);
 	}
 	
 	public void panelInit() {
@@ -74,5 +82,19 @@ public class View_mainFrame extends JFrame{
 		
 		text1.addListnerController(ctrl);
 		text2.addListnerController(ctrl);
+	}
+	
+	public String getFileOpen() {
+		if(jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+			return jfc.getSelectedFile().toString() + '.' + jfc.getFileFilter().getDescription();
+		}
+		return null;
+	}
+	
+	public String getFileSave() {
+		if(jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+			return jfc.getSelectedFile().toString() + '.' + jfc.getFileFilter().getDescription();
+		}
+		return null;
 	}
 }

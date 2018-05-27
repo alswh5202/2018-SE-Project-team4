@@ -25,4 +25,13 @@ public class SM_View extends JFrame {
 	public void addListnerController(SM_Controller ctrl) {
 		vmf.addListnerController(ctrl);
 	}
+	
+	public String getFileOpen() {
+		return vmf.getFileOpen();
+	}
+	
+	public String getFileSave() {
+		return vmf.getFileSave();
+	}
+
 }

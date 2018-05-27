@@ -20,13 +20,20 @@ public class SM_Controller implements ActionListener {
 		
 	}
 	
-	private void save(){
-		
+	private void save(boolean isTwo){
+		if(isTwo) {
+			System.out.println("Left_Save : " + view.getFileSave());
+		}else{
+			System.out.println("Right_Save : " + view.getFileSave());
+		}
 	}
 	
-	private void load(String path, boolean isTwo){
-		
-	}
+	private void load(boolean isTwo){
+		if(isTwo) {
+			System.out.println("Left_Load : " + view.getFileOpen());
+		}else{
+			System.out.println("Right_Load : " + view.getFileOpen());
+		}	}
 	
 	private void edit(){
 		
@@ -36,6 +43,17 @@ public class SM_Controller implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e){
 		System.out.println(e.getActionCommand());
+		switch (e.getActionCommand()) {
+		case "Right_Load" :
+			load(false);
+			break;
+		case "Right_Save" :
+			save(false);
+			break;
+			
+		default:
+			break;
+		}
 	}
 
 }
