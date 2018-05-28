@@ -1,4 +1,6 @@
 import java.awt.event.ActionListener;
+import java.util.List;
+
 import javax.swing.*;
 
 public class SM_View extends JFrame {
@@ -9,8 +11,8 @@ public class SM_View extends JFrame {
 		//UI set
 	}
 	
-	public void setUIText(String text, boolean isTwo) {
-		vmf.setUIText(text, isTwo);
+	public void setUIText(List<String> str, boolean isTwo) {
+		vmf.setUIText(str, isTwo);
 	}
 	
 	public String getUIText(boolean isTwo) {

@@ -29,17 +29,27 @@ public class SM_Controller implements ActionListener {
 	}
 	
 	private void load(boolean isTwo){
-		if(isTwo) {
-			System.out.println("Left_Load : " + view.getFileOpen());
-		}else{
-			System.out.println("Right_Load : " + view.getFileOpen());
-		}	}
+		String str = view.getFileOpen();
+		try {
+			if(!str.equals(null)) {
+				model.openText(str, isTwo);
+			}else {
+				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		updateText();
+	}
 	
 	private void edit(){
 		
 	}
 	
-	
+	private void updateText() {
+		view.setUIText(model.getAll(true), true);
+		view.setUIText(model.getAll(false), false);
+	}
 	
 	public void actionPerformed(ActionEvent e){
 		System.out.println(e.getActionCommand());

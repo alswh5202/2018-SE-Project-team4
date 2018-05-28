@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -48,8 +49,8 @@ public class View_textFrame extends JPanel {
 		this.add(jsp,"Center");
 	}
 	
-	public void setUIText(String text) {
-		ta.setText(text);
+	public void setUIText(List<String> str) {
+		ta.setText(ListToString(str));
 	}
 	
 	public String getUIText() {
@@ -60,6 +61,16 @@ public class View_textFrame extends JPanel {
 		btn_save.addActionListener(ctrl);
 		btn_load.addActionListener(ctrl);
 		btn_edit.addActionListener(ctrl);
+	}
+	
+	public String ListToString(List<String> str) {
+		String result;
+		
+		result = str.toString();
+		result = result.substring(1, result.length());
+		result = result.replaceAll(", ", "\n");
+		
+		return result;
 	}
 }
 

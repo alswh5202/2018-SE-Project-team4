@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -71,11 +73,11 @@ public class View_mainFrame extends JFrame{
 		panel_btn.add(btn_merge);
 	}
 	
-	public void setUIText(String text, boolean isTwo) {
+	public void setUIText(List<String> str, boolean isTwo) {
 		if(isTwo) {
-			text1.setUIText(text);
+			text1.setUIText(str);
 		}else {
-			text2.setUIText(text);
+			text2.setUIText(str);
 		}
 	}
 	
@@ -97,15 +99,29 @@ public class View_mainFrame extends JFrame{
 	
 	public String getFileOpen() {
 		if(jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-			return jfc.getSelectedFile().toString() + '.' + jfc.getFileFilter().getDescription();
+			String str = jfc.getSelectedFile().toString();
+			if(str.substring(str.length()-4).equals(".txt")) {
+				return str;
+			}
+			else {
+				return null;
+			}
+		}else {
+			return null;
 		}
-		return null;
 	}
 	
 	public String getFileSave() {
-		if(jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-			return jfc.getSelectedFile().toString() + '.' + jfc.getFileFilter().getDescription();
+		if(jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+			String str = jfc.getSelectedFile().toString();
+			if(str.substring(str.length()-4).equals(".txt")) {
+				return str;
+			}
+			else {
+				return str + '.' + jfc.getFileFilter().getDescription(); 
+			}
+		}else {
+			return null;
 		}
-		return null;
 	}
 }
