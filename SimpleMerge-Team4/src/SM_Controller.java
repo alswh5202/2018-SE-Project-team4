@@ -50,7 +50,12 @@ public class SM_Controller implements ActionListener {
 		case "Right_Save" :
 			save(false);
 			break;
-			
+		case "Left_Load" :
+			load(true);
+			break;
+		case "Left_Save" :
+			save(true);
+			break;
 		default:
 			break;
 		}

@@ -4,6 +4,8 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class View_mainFrame extends JFrame{
@@ -42,6 +44,15 @@ public class View_mainFrame extends JFrame{
 		// Frame Layout Controll
 		
 		jfc = new JFileChooser();
+		
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			// JFileChooser 의 UI 변경. 시스템의 룩앤필과 동일하게 변경한다.
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		jfc.updateUI();
         jfc.setFileFilter(new FileNameExtensionFilter("txt", "txt"));
         jfc.setMultiSelectionEnabled(false);
 	}
