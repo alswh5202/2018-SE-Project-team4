@@ -3,10 +3,10 @@ import java.awt.event.ActionListener;
 
 public class SM_Controller implements ActionListener {
 	private SM_Model model;
-	private SM_View view;
+	private View_mainFrame view;
 	private boolean isEdit;
 	
-	public SM_Controller(SM_Model _model,SM_View _view){
+	public SM_Controller(SM_Model _model,View_mainFrame _view){
 		model = _model;
 		view = _view;
 		_view.addListnerController(this);
@@ -16,43 +16,47 @@ public class SM_Controller implements ActionListener {
 		
 	}
 	
-	private void merge(boolean isTwo){ //isTwo가 트루면 두번째(오른쪽)텍스트를 의미함
+	private void merge(boolean isLeft){ //isLeft가 트루면 두번째(오른쪽)텍스트를 의미함
 		
 	}
 	
-	private void save(boolean isTwo){
-		if(isTwo) {
-			System.out.println("Left_Save : " + view.getFileSave());
-		}else{
-			System.out.println("Right_Save : " + view.getFileSave());
-		}
-	}
-	
-	private void load(boolean isTwo){
-		String str = view.getFileOpen();
+	private void save(boolean isLeft){
+		String str = view.getFileSave();
 		try {
 			if(!str.equals(null)) {
-				model.openText(str, isTwo);
+				model.saveText(str, isLeft);
 			}else {
 				
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		updateText();
 	}
 	
-	private void edit(){
-		
+	private void load(boolean isLeft){
+		String str = view.getFileOpen();
+		try {
+			if(!str.equals(null)) {
+				model.openText(str, isLeft);
+			}else {
+				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		updateText(isLeft);
 	}
 	
-	private void updateText() {
-		view.setUIText(model.getAll(true), true);
-		view.setUIText(model.getAll(false), false);
+	private void edit(boolean isLeft){
+		view.setEdit(isLeft);
+		model.setText(view.getUIText(isLeft), isLeft);
+	}
+	
+	private void updateText(boolean isLeft) {
+		view.setUIText(model.getAll(isLeft), isLeft);
 	}
 	
 	public void actionPerformed(ActionEvent e){
-		System.out.println(e.getActionCommand());
 		switch (e.getActionCommand()) {
 		case "Right_Load" :
 			load(false);
@@ -60,11 +64,17 @@ public class SM_Controller implements ActionListener {
 		case "Right_Save" :
 			save(false);
 			break;
+		case "Right_Edit" :
+			edit(false);
+			break;
 		case "Left_Load" :
 			load(true);
 			break;
 		case "Left_Save" :
 			save(true);
+			break;
+		case "Left_Edit" :
+			edit(true);
 			break;
 		default:
 			break;

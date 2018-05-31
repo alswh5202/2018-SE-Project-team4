@@ -5,9 +5,9 @@ public class Test {
 		// TODO Auto-generated method stub
 		SM_Controller controll;
 		SM_Model model;
-		SM_View view;
+		View_mainFrame view;
 		model = new SM_Model();
-		view = new SM_View();
+		view = new View_mainFrame();
 		controll = new SM_Controller(model, view);
 	}
 

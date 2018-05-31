@@ -73,16 +73,16 @@ public class View_mainFrame extends JFrame{
 		panel_btn.add(btn_merge);
 	}
 	
-	public void setUIText(List<String> str, boolean isTwo) {
-		if(isTwo) {
+	public void setUIText(String str, boolean isLeft) {
+		if(isLeft) {
 			text1.setUIText(str);
 		}else {
 			text2.setUIText(str);
 		}
 	}
 	
-	public String getUIText(boolean isTwo) {
-		if(isTwo) {
+	public String getUIText(boolean isLeft) {
+		if(isLeft) {
 			return text1.getUIText();
 		}else {
 			return text2.getUIText();
@@ -123,5 +123,22 @@ public class View_mainFrame extends JFrame{
 		}else {
 			return null;
 		}
+	}
+	
+	public void setEdit(boolean isLeft) {
+		boolean flag;
+		if(isLeft) {
+			flag = text1.ta.isEditable();
+			text1.setEdit(!flag);
+			text1.btn_if_Editing(flag);
+		}else {
+			flag = text2.ta.isEditable();
+			text2.setEdit(!flag);
+			text2.btn_if_Editing(flag);
+		}
+	}
+	
+	public void isEdit() {
+		
 	}
 }

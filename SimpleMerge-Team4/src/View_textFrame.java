@@ -18,18 +18,19 @@ public class View_textFrame extends JPanel {
 	JButton btn_load;
 	JButton btn_edit;
 
-	boolean isTwo;
+	boolean isLeft;
 	
-	public View_textFrame(boolean isTwo) {
-		this.isTwo = isTwo;
+	public View_textFrame(boolean isLeft) {
+		this.isLeft = isLeft;
 		init();
 	}
 	
 	public void init() {
 		ta.setBackground(Color.WHITE);
+		ta.setEditable(false);
 		jsp = new JScrollPane(ta);
 		
-		if(isTwo) {
+		if(isLeft) {
 			btn_save = new JButton("Left_Save");		
 			btn_load = new JButton("Left_Load");
 			btn_edit = new JButton("Left_Edit");
@@ -49,8 +50,8 @@ public class View_textFrame extends JPanel {
 		this.add(jsp,"Center");
 	}
 	
-	public void setUIText(List<String> str) {
-		ta.setText(ListToString(str));
+	public void setUIText(String str) {
+		ta.setText(str);
 	}
 	
 	public String getUIText() {
@@ -63,14 +64,14 @@ public class View_textFrame extends JPanel {
 		btn_edit.addActionListener(ctrl);
 	}
 	
-	public String ListToString(List<String> str) {
-		String result;
+	public void setEdit(boolean flag) {
+		ta.setEditable(flag);
+	}
+	
+	public void btn_if_Editing(boolean isEdit) {
 		
-		result = str.toString();
-		result = result.substring(1, result.length());
-		result = result.replaceAll(", ", "\n");
-		
-		return result;
+		btn_save.setEnabled(isEdit);
+		btn_load.setEnabled(isEdit);
 	}
 }
 
