@@ -138,8 +138,14 @@ public class View_mainFrame extends JFrame{
 		}
 	}
 	
-	public void isEdit() {
-		
+	public boolean isEditing(boolean isLeft) {
+		boolean bool;
+		if(isLeft) {
+			bool = text1.ta.isEditable();
+		}else {
+			bool = text2.ta.isEditable();
+		}
+		return bool;
 	}
 	
 	public void diffView(int[] diffLine) {

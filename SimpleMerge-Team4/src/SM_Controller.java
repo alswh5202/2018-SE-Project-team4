@@ -17,6 +17,8 @@ public class SM_Controller implements ActionListener {
 	
 	private void getDiff(){
 		
+		updateText();
+
 		if(model.getDiffView(true).length > model.getDiffView(false).length) {
 			view.diffView(model.getDiffView(true));
 		} else {
@@ -31,7 +33,7 @@ public class SM_Controller implements ActionListener {
 	private void save(boolean isLeft){
 		String str = view.getFileSave();
 		
-		view.setUIText(model.getAll(isLeft), isLeft);
+		updateText(isLeft);
 
 		try {
 			if(!str.equals(null)) {
@@ -48,7 +50,7 @@ public class SM_Controller implements ActionListener {
 		
 		String str = view.getFileOpen();
 		
-		view.setUIText(model.getAll(isLeft), isLeft);
+		updateText(isLeft);
 
 		try {
 			if(!str.equals(null)) {
@@ -63,13 +65,22 @@ public class SM_Controller implements ActionListener {
 	}
 	
 	private void edit(boolean isLeft){
-		view.setUIText(model.getAll(isLeft), isLeft);
-		view.setEdit(isLeft);
-		model.setText(view.getUIText(isLeft), isLeft);
+		if(view.isEditing(isLeft)) {
+			view.setEdit(isLeft);
+			model.setText(view.getUIText(isLeft), isLeft);
+		}else {
+			updateText(isLeft);
+			view.setEdit(isLeft);
+			model.setText(view.getUIText(isLeft), isLeft);
+		}
 	}
 	
 	private void updateText(boolean isLeft) {
 		view.setUIText(model.getAll(isLeft), isLeft);
+	}
+	private void updateText() {
+		view.setUIText(model.getAll(true), true);
+		view.setUIText(model.getAll(false), false);
 	}
 	
 	public void actionPerformed(ActionEvent e){
