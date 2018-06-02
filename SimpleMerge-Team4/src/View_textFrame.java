@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.util.List;
 
@@ -7,11 +8,19 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.StyledDocument;
+
+import com.sun.corba.se.impl.orb.ParserTable.TestContactInfoListFactory;
+
 
 public class View_textFrame extends JPanel {
 	
-	JTextArea ta = new JTextArea("text test",35,50);
+	JTextPane ta = new JTextPane();
 	JScrollPane jsp;
+	StyledDocument styleDoc;
 	
 	JPanel panel_btn;
 	JButton btn_save;
@@ -28,8 +37,15 @@ public class View_textFrame extends JPanel {
 	public void init() {
 		ta.setBackground(Color.WHITE);
 		ta.setEditable(false);
-		jsp = new JScrollPane(ta);
-		
+		jsp = new JScrollPane(ta) {
+			 @Override
+	            public Dimension getPreferredSize() {
+	                return new Dimension(550,650);
+	            }
+		};
+        jsp.setViewportView(ta);
+        styleDoc = ta.getStyledDocument();
+
 		if(isLeft) {
 			btn_save = new JButton("Left_Save");		
 			btn_load = new JButton("Left_Load");
@@ -72,6 +88,39 @@ public class View_textFrame extends JPanel {
 		
 		btn_save.setEnabled(isEdit);
 		btn_load.setEnabled(isEdit);
+	}
+	
+	public void diffView(int[] diffLine) {
+		String[] str = getUIText().split("\n");
+		
+		textClear();
+		
+		for(int inx = 0; inx < diffLine.length; inx++) {
+			String buf;
+			if(inx < str.length) {
+				buf = str[inx];
+			}else {
+				buf = "";
+			}
+			
+			if(diffLine[inx] == 0) {
+				try {
+					styleDoc.insertString(styleDoc.getLength(), buf + "\t\n", AttributeUtil.getDiffAttribute());
+				} catch (BadLocationException e) {
+					e.printStackTrace();
+				}
+			}else {
+				try {
+					styleDoc.insertString(styleDoc.getLength(), buf + "\n", AttributeUtil.getDefaultAttribute());
+				} catch (BadLocationException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public void textClear() {
+		ta.setText(null);
 	}
 }
 

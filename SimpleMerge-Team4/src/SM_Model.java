@@ -14,6 +14,8 @@ public class SM_Model {
 	List<String> R_str; 
 	//FileReader 대신 한줄의 스트링 리스트를 저장
 	
+	Model_diff _model_diff;
+	
 	public SM_Model(){
 		L_str = new ArrayList<String>();
 		R_str = new ArrayList<String>();
@@ -81,5 +83,10 @@ public class SM_Model {
 		return buf;
 	}
 	
+	public int[] getDiffView(boolean isTwo){
+		_model_diff = new Model_diff(L_str, R_str);
+		
+		return _model_diff.getDiffView(isTwo);
+	}
 	
 }

@@ -141,4 +141,10 @@ public class View_mainFrame extends JFrame{
 	public void isEdit() {
 		
 	}
+	
+	public void diffView(int[] diffLine) {
+		text1.diffView(diffLine);
+		text2.diffView(diffLine);
+		
+	}
 }

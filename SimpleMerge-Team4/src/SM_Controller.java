@@ -1,6 +1,9 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
+
 public class SM_Controller implements ActionListener {
 	private SM_Model model;
 	private View_mainFrame view;
@@ -12,8 +15,13 @@ public class SM_Controller implements ActionListener {
 		_view.addListnerController(this);
 	}
 	
-	private void diff(){
+	private void getDiff(){
 		
+		if(model.getDiffView(true).length > model.getDiffView(false).length) {
+			view.diffView(model.getDiffView(true));
+		} else {
+			view.diffView(model.getDiffView(false));
+		}
 	}
 	
 	private void merge(boolean isLeft){ //isLeft가 트루면 두번째(오른쪽)텍스트를 의미함
@@ -22,6 +30,9 @@ public class SM_Controller implements ActionListener {
 	
 	private void save(boolean isLeft){
 		String str = view.getFileSave();
+		
+		view.setUIText(model.getAll(isLeft), isLeft);
+
 		try {
 			if(!str.equals(null)) {
 				model.saveText(str, isLeft);
@@ -34,7 +45,11 @@ public class SM_Controller implements ActionListener {
 	}
 	
 	private void load(boolean isLeft){
+		
 		String str = view.getFileOpen();
+		
+		view.setUIText(model.getAll(isLeft), isLeft);
+
 		try {
 			if(!str.equals(null)) {
 				model.openText(str, isLeft);
@@ -48,6 +63,7 @@ public class SM_Controller implements ActionListener {
 	}
 	
 	private void edit(boolean isLeft){
+		view.setUIText(model.getAll(isLeft), isLeft);
 		view.setEdit(isLeft);
 		model.setText(view.getUIText(isLeft), isLeft);
 	}
@@ -75,6 +91,11 @@ public class SM_Controller implements ActionListener {
 			break;
 		case "Left_Edit" :
 			edit(true);
+			break;
+		case "Diff" :
+			getDiff();
+			break;
+		case "Merge" :
 			break;
 		default:
 			break;
